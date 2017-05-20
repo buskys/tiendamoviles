@@ -246,9 +246,8 @@ public class FormRegistro extends javax.swing.JDialog {
         }else{
             Usuario usuario1 = new Usuario(nomreReg.getText(),apellido1Reg.getText(),apellido2Reg.getText(),usuarioReg.getText(),passwordReg.getText());
             usuarios.añadir(usuario1);
-            JOptionPane.showMessageDialog(this, "Usuario "+usuario1.getUsuario()+" registrado correctamente.", null, WIDTH);
+            JOptionPane.showMessageDialog(this, "Usuario "+usuario1.getUsuario()+" registrado correctamente.", null, WIDTH);//Avisar al usuario de que se registro correctamente
             this.dispose();
-            //Avisar al usuario de que se registro correctamente
         }
         
     }//GEN-LAST:event_botonEnviarActionPerformed

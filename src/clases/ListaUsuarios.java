@@ -1,9 +1,7 @@
 package clases;
 
-import Interfaz.*;
 import clases.*;
 
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.iterator;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -11,7 +9,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
 
-import static java.util.Spliterators.iterator;
 
 /**
  * @author Adrián Bermúdez Vázquez

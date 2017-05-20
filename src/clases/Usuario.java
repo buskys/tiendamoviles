@@ -62,7 +62,7 @@ public class Usuario implements Comparable<Object> {
     }
 
     public String toFileString(){
-        return this.getNombre() + ";" + this.getApellido1() + ";" + this.getApellido2() + ";" + this.getUsuario() + ";" + this.getContraseña() + ";\n";
+        return this.getNombre() + ";" + this.getApellido1() + ";" + this.getApellido2() + ";" + this.getUsuario() + ";" + this.getContraseña() + ";\r\n";
     }
 
     public static Usuario fromFileString(String str){

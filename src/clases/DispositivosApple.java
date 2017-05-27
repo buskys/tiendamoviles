@@ -55,9 +55,17 @@ private String conectorJack;
         return conectorJack;
     }
 
+    public String getConectorJack() {
+        return conectorJack;
+    }
+
     public void setConectorJack(String conectorJack) {
         this.conectorJack = conectorJack;
     }
 
+             public String toFileString(){
+                return this.getNombre()+ ";" + this.getTipoConector()+ ";" + this.getConectorJack() + ";"+this.getPulgadas()+ ";" + this.getLectorHuellas() + ";" 
+                        + this.getRam() + ";" + this.getProcesador() +";" + this.getResolucionPantalla() + ";" + this.getPrecio() + ";" + this.getCapacidadAlmacenamiento() +";\r\n";
+    }
 
 }

@@ -57,7 +57,7 @@ public abstract class Dispositivos {
         this.pulgadas = pulgadas;
     }
 
-    public String isLectorHuellas() {
+    public String getLectorHuellas() {
         return lectorHuellas;
     }
 
@@ -100,6 +100,12 @@ public abstract class Dispositivos {
     public static DispositivosAndroid fromFileString(String str){
         String[] partes = str.split(";");
         return new DispositivosAndroid(partes[0],partes[1],partes[2],partes[3],partes[4],partes[5],partes[6],partes[7],
-                partes[8],partes[9],partes[10],partes[11],partes[12]+";"+id);
+                partes[8],partes[9],partes[10],partes[11],partes[12]+";"+id+";");
+    }
+    
+    public static DispositivosApple fromFileStringApple(String str){
+        String[] partes = str.split(";");
+        return new DispositivosApple(partes[0],partes[1],partes[2],partes[3],partes[4],partes[5],partes[6],partes[7],
+                partes[8],partes[9]+id+";");
     }
 }

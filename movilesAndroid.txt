@@ -1,3 +1,0 @@
-
-SI;4.0;MiniUSB;Bq;85;SI;[1];adsfasdf;asdfsdf;;hola;8;1;
-SI;4.0;MiniUSB;Bq;85;SI;[1];adsfasdf;asdfsdf;;hola;8;1;

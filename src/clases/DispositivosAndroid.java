@@ -78,7 +78,7 @@ public class DispositivosAndroid extends Dispositivos{
     }
         
          public String toFileString(){
-                return this.isTarjetaSD()+ ";" + this.getVersionAndroid()+ ";" + this.getTipoConexion() + ";"  + this.getMarca()+ ";" + this.getPulgadas() + ";" + this.isLectorHuellas() + ";" + this.getRam() +";" + this.getProcesador() + ";" + this.getResolucionPantalla()+";" + this.getPrecio() + ";" + this.getNombre() + ";" + this.getCapacidadAlmacenamiento() +/* ";" + this.getId() +*/";\r\n";
+                return this.isTarjetaSD()+ ";" + this.getVersionAndroid()+ ";" + this.getTipoConexion() + ";"  + this.getMarca()+ ";" + this.getPulgadas() + ";" + this.getLectorHuellas() + ";" + this.getRam() +";" + this.getProcesador() + ";" + this.getResolucionPantalla()+";" + this.getPrecio() + ";" + this.getNombre() + ";" + this.getCapacidadAlmacenamiento() +";\r\n";
     }
          
 

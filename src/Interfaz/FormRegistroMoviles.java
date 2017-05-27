@@ -8,8 +8,8 @@ package Interfaz;
 import clases.DispositivosAndroid;
 import clases.DispositivosApple;
 import clases.ListaDispositivosAndroid;
+import clases.ListaDispositivosApple;
 import static java.awt.image.ImageObserver.WIDTH;
-import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,12 +19,14 @@ import javax.swing.JOptionPane;
 public class FormRegistroMoviles extends javax.swing.JFrame {
 
     ListaDispositivosAndroid listaAndroid = new ListaDispositivosAndroid();
+    ListaDispositivosApple listaApple = new ListaDispositivosApple();
 
     /**
      * Creates new form FormRegistroMoviles
      */
     public FormRegistroMoviles() {
         listaAndroid.initializeList();
+        listaApple.initializeList();
         initComponents();
         androidPanel.setEnabled(false);
         androidPanel.setVisible(false);
@@ -104,7 +106,7 @@ public class FormRegistroMoviles extends javax.swing.JFrame {
         cancelarBoton = new javax.swing.JButton();
         pulgadasTf = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Seleccione tipo de movil");
 
@@ -446,66 +448,70 @@ public class FormRegistroMoviles extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        getAccessibleContext().setAccessibleDescription("");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void enviarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotonActionPerformed
-        try {
-            if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("-Seleccione un SO-")) {
-                JOptionPane.showMessageDialog(this, "Debe seleccionar un sistema Operativo", "Error", JOptionPane.ERROR_MESSAGE);
-                if (pulgadasTf.getText().isEmpty()) {
-                    pulgadasMensaje.setVisible(true);
-                    System.out.println("1");
-                    if (precioTf.getText().isEmpty()) {
-                        System.out.println("2");
-                        precioMensaje.setVisible(true);
-                        if (procesadorTf.getText().isEmpty()) {
-                            System.out.println("3");
-                            ProcesadorMensaje.setVisible(true);
-                            if (resolucionPantallaTf.getText().isEmpty()) {
-                                System.out.println("4");
-                                resolucionMensaje.setVisible(true);
-                                if (androidPanel.isEnabled()) {
-                                    System.out.println("5");
-                                    if (nombreTf.getText().isEmpty()) {
-                                        System.out.println("6");
-                                        nombreAndroidMensaje.setVisible(true);
-                                        if (applePanel.isEnabled()) {
-                                            System.out.println("7");
-                                            if (nombreAppleTf.getText().isEmpty()) {
-                                                System.out.println("8");
-                                                nombreAppleMensaje.setVisible(true);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            } else if (pulgadasMensaje.isVisible() | precioMensaje.isVisible() | ProcesadorMensaje.isVisible() | resolucionMensaje.isVisible()
-                    | nombreAndroidMensaje.isVisible() | nombreAppleMensaje.isVisible()) {
-                JOptionPane.showMessageDialog(this, "Compruebe los errores para poder continuar", "Error", JOptionPane.ERROR_MESSAGE);
-            } else if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("Android")) {
-                DispositivosAndroid android1 = new DispositivosAndroid(tarjetaSdCB.getSelectedItem().toString(), versionAndroidCB.getSelectedItem().toString(), tipoSimCB.getSelectedItem().toString(),
-                        tipoConexionCB.getSelectedItem().toString(), marcaCB.getSelectedItem().toString(), pulgadasTf.getText(), lectorHuellasCB.getSelectedItem().toString(),
-                        Arrays.toString(ramCB.getSelectedObjects()), procesadorTf.getText(), resolucionPantallaTf.getText(), precioTf.getText(),
-                        nombreTf.getText(), capacidadAlmacenamientoCB.getSelectedItem().toString());
-                listaAndroid.añadir(android1);
-                JOptionPane.showMessageDialog(this, "Movil " + android1.getNombre() + " registrado correctamente.", null, WIDTH);
 
-                //JOptionPane.showMessageDialog(this, "Revise los campos con error",null,WIDTH);
-            } else if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("Apple")) {
-                DispositivosApple apple1 = new DispositivosApple(nombreAppleTf.getText(), tipoConectorCB.getSelectedItem().toString(), conectorJackCB.getSelectedItem().toString(),
-                        pulgadasTf.getText(), lectorHuellasCB.getSelectedItem().toString(), ramCB.getSelectedItem().toString(), procesadorTf.getText(), resolucionPantallaTf.getText(),
-                        precioTf.getText(), capacidadAlmacenamientoCB.getSelectedItem().toString());
-
-                this.dispose();
+        if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("-Seleccione un SO-")) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un sistema Operativo", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (pulgadasTf.getText().isEmpty()) {
+            pulgadasMensaje.setVisible(true);
+        } else if (precioTf.getText().isEmpty()) {
+            precioMensaje.setVisible(true);
+        } else if (procesadorTf.getText().isEmpty()) {
+            ProcesadorMensaje.setVisible(true);
+        } else if (resolucionPantallaTf.getText().isEmpty()) {
+            resolucionMensaje.setVisible(true);
+        } else if (androidPanel.isEnabled()) {
+            if (nombreTf.getText().isEmpty()) {
+                nombreAndroidMensaje.setVisible(true);
             }
-
-        } catch (Exception e) {
-            System.out.println("Maaaaal");
+        } else if (applePanel.isEnabled()) {
+            if (nombreAppleTf.getText().isEmpty()) {
+                nombreAppleMensaje.setVisible(true);
+            }
         }
+        if (pulgadasMensaje.isVisible() | precioMensaje.isVisible() | ProcesadorMensaje.isVisible() | resolucionMensaje.isVisible()
+                | nombreAndroidMensaje.isVisible() | nombreAppleMensaje.isVisible()) {
+            JOptionPane.showMessageDialog(this, "Compruebe los errores para poder continuar", "Error", JOptionPane.ERROR_MESSAGE);
+
+        pulgadasMensaje.setVisible(false);
+        precioMensaje.setVisible(false);
+        ProcesadorMensaje.setVisible(false);
+        resolucionMensaje.setVisible(false);
+        nombreAndroidMensaje.setVisible(false);
+        nombreAppleMensaje.setVisible(false);
+            
+        } else if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("Android")) {
+            DispositivosAndroid android1 = new DispositivosAndroid(tarjetaSdCB.getSelectedItem().toString(), versionAndroidCB.getSelectedItem().toString(), tipoSimCB.getSelectedItem().toString(),
+                    tipoConexionCB.getSelectedItem().toString(), marcaCB.getSelectedItem().toString(), pulgadasTf.getText(), lectorHuellasCB.getSelectedItem().toString(),
+                    ramCB.getSelectedItem().toString(), procesadorTf.getText(), resolucionPantallaTf.getText(), precioTf.getText(),
+                    nombreTf.getText(), capacidadAlmacenamientoCB.getSelectedItem().toString());
+            listaAndroid.añadir(android1);
+            JOptionPane.showMessageDialog(this, "Movil " + android1.getNombre() + " registrado correctamente.", null, WIDTH);
+            procesadorTf.setText("");
+            resolucionPantallaTf.setText("");
+            pulgadasTf.setText("");
+            nombreTf.setText("");
+            precioTf.setText("");
+
+
+        } else if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("Apple")) {
+            DispositivosApple apple1 = new DispositivosApple(nombreAppleTf.getText(), tipoConectorCB.getSelectedItem().toString(), conectorJackCB.getSelectedItem().toString(),
+                    pulgadasTf.getText(), lectorHuellasCB.getSelectedItem().toString(), ramCB.getSelectedItem().toString(), procesadorTf.getText(), resolucionPantallaTf.getText(),
+                    precioTf.getText(), capacidadAlmacenamientoCB.getSelectedItem().toString());
+            listaApple.añadir(apple1);
+            JOptionPane.showMessageDialog(this, "Movil " + apple1.getNombre() + " registrado correctamente.", null, WIDTH);
+            procesadorTf.setText("");
+            resolucionPantallaTf.setText("");
+            pulgadasTf.setText("");
+            precioTf.setText("");
+            nombreAppleMensaje.setText("");
+        }
+
     }//GEN-LAST:event_enviarBotonActionPerformed
 
     private void sistemaCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemaCBActionPerformed
@@ -567,6 +573,7 @@ public class FormRegistroMoviles extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {

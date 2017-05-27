@@ -14,7 +14,6 @@ public class ListaDispositivosApple {
 
     private final static String FILE_LOC = "movilesApple.txt";
     static private ArrayList<DispositivosApple> listaApple;
-    //static private HashMap<String, Usuario> usuarioHashMap;
 
     public ListaDispositivosApple() {
         listaApple = new ArrayList<>();

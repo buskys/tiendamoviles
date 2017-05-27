@@ -35,6 +35,7 @@ public class InterfazAndroidApple extends javax.swing.JDialog {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationByPlatform(true);
 
         jLabel1.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
         jLabel1.setText("Seleccione que tipo de acción quiere realizar");

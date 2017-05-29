@@ -1,1 +1,2 @@
 Iphone 5;Lightning;SI;5;SI;1;A5;250;800;16;
+oli;Lightning;SI;5;NO;6;800;500;12;8;

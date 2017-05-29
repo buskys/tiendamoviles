@@ -52,6 +52,11 @@ public class InterfazAndroidApple extends javax.swing.JDialog {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("Ver/Editar móviles");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton3.setText("Cancelar");
@@ -97,17 +102,31 @@ public class InterfazAndroidApple extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Cierra la ventana
+ * @param evt 
+ */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+/**
+ * Cierra la ventana y lanza la ventana FormRegistroMoviles
+ * @param evt 
+ */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        this.dispose();
         FormRegistroMoviles registrarMovil = new FormRegistroMoviles();
         registrarMovil.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+/**
+ * Lanza la venta Moviles
+ * @param evt 
+ */
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Moviles moviles = new Moviles("");
+        moviles.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

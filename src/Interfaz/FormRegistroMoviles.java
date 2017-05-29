@@ -21,9 +21,11 @@ public class FormRegistroMoviles extends javax.swing.JFrame {
     ListaDispositivosAndroid listaAndroid = new ListaDispositivosAndroid();
     ListaDispositivosApple listaApple = new ListaDispositivosApple();
 
-    /**
-     * Creates new form FormRegistroMoviles
-     */
+ /**
+  * Se crea el constructor del formulario FormRegistroMoviles, el cual inicializa listaAndroid y listaApple.
+  * Los paneles de android y apple los inicializa a no visibles asi como todos los componentes dentro de los mismos paneles.
+  * Los jLabels que contienen mensajes de error también los inicializa a false.
+  */
     public FormRegistroMoviles() {
         listaAndroid.initializeList();
         listaApple.initializeList();
@@ -453,7 +455,16 @@ public class FormRegistroMoviles extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Cuándo se pulsa el botón enviar se comprueba que opción de sistemaCB ha elegido el usuario, si deja la opción por defecto 
+ * se le informa lanzando un mensaje de error.
+ * Acto seguido si el usuario ha seleccionado una opción distinta a la de por defecto se comprueba que todos los campos que estén activos
+ * se encuentren con texto, si alguno se encuentra vació se activa el mensaje de error destinado para campo.
+ * Una vez comprobados todos los campos y el combo box, se hace la distinción según la opción elegida en sistemaCB, si es android se crea 
+ * el objeto android1 que es de tipo DispositivosAndroid con los parametros recogidos en el formulario. Por el contrario, si la opción escogida
+ * fue apple hará lo mismo pero creando el objeto apple1 que es de tipo DispositivosApple
+ * @param evt 
+ */
     private void enviarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarBotonActionPerformed
 
         if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("-Seleccione un SO-")) {
@@ -519,7 +530,7 @@ public class FormRegistroMoviles extends javax.swing.JFrame {
  * @param evt 
  */
     private void sistemaCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemaCBActionPerformed
-        String sistema = sistemaCB.getSelectedItem().toString();             // <------------Hacer Switch???
+        String sistema = sistemaCB.getSelectedItem().toString();             
         if (sistemaCB.getSelectedItem().toString().equalsIgnoreCase("Android")) {
             applePanel.setEnabled(false);
             applePanel.setVisible(false);
@@ -558,7 +569,10 @@ public class FormRegistroMoviles extends javax.swing.JFrame {
             resolucionPantallaTf.setEnabled(false);
         }
     }//GEN-LAST:event_sistemaCBActionPerformed
-
+/**
+ * Cierra la ventana
+ * @param evt 
+ */
     private void cancelarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBotonActionPerformed
         this.dispose();
     }//GEN-LAST:event_cancelarBotonActionPerformed

@@ -23,15 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -41,8 +38,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="botonEnviar" min="-2" pref="96" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                  <Component id="botonCancelar" min="-2" pref="103" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              </Group>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -68,37 +72,22 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="apellido2Reg" max="32767" attributes="0"/>
                               <Component id="usuarioReg" max="32767" attributes="0"/>
-                              <Component id="passwordReg" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <Component id="botonEnviar" min="-2" pref="96" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="password2Reg" min="-2" pref="187" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="botonCancelar" min="-2" pref="103" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="passwordReg" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="nomreReg" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="apellido1Reg" alignment="3" pref="38" max="32767" attributes="0"/>
@@ -109,19 +98,19 @@
                       <Component id="apellido2Reg" alignment="3" pref="36" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="usuarioReg" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel3" max="32767" attributes="0"/>
-                      <Component id="usuarioReg" min="-2" pref="36" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="passwordReg" alignment="3" pref="36" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="password2Reg" alignment="3" pref="37" max="32767" attributes="0"/>
+                      <Component id="jLabel6" pref="36" max="32767" attributes="0"/>
+                      <Component id="passwordReg" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -178,17 +167,6 @@
             <Property name="text" type="java.lang.String" value="2&#xba; Apellido:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Calibri" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="33" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Repita contrase&#xf1;a:"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -208,16 +186,6 @@
         <Component class="javax.swing.JTextField" name="usuarioReg">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="usuarioRegActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="passwordReg">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordRegActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="password2Reg">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="password2RegActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="apellido2Reg">
@@ -245,6 +213,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCancelarActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="passwordReg">
         </Component>
       </SubComponents>
     </Container>

@@ -146,7 +146,11 @@ public class InterfazLogin extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
-
+/**
+ * Se comprueba que no exista el usuario ya en la lista, si no existe le deja acceder a la aplicación, si no lanza mensaje de error y 
+ * se abre la ventana de registro
+ * @param evt 
+ */
     private void logearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logearActionPerformed
         
         char pass[] = jPasswordField1.getPassword();
@@ -158,13 +162,14 @@ public class InterfazLogin extends javax.swing.JFrame {
                 InterfazUsuarios usuarios = new InterfazUsuarios();
                 usuarios.setVisible(true);
                 this.dispose();
-                //
+                
 
             } else {
                 JOptionPane.showMessageDialog(this, "Contraseña incorrecta", null, WIDTH);
             }
         } else{
-            //TODO mandalo a registro
+            JOptionPane.showMessageDialog(this, "Usuario no registrado, se abrirá la ventana de registro", null, WIDTH);
+            nuevoUsuarioActionPerformed(evt);
         }
 
     }//GEN-LAST:event_logearActionPerformed
@@ -172,7 +177,10 @@ public class InterfazLogin extends javax.swing.JFrame {
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
-
+/**
+ * Abre la venta de registro FormRegristro
+ * @param evt 
+ */
     private void nuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoUsuarioActionPerformed
 
         FormRegistro registro = new FormRegistro(InterfazLogin,true);

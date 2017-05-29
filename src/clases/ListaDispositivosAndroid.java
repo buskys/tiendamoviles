@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
+import java.util.ListIterator;
 
 
 /**
@@ -13,7 +14,9 @@ import java.util.*;
 public class ListaDispositivosAndroid {
 
     private final static String FILE_LOC = "movilesAndroid.txt";
-    static private ArrayList<DispositivosAndroid> listaAndroid;
+     public ArrayList<DispositivosAndroid> listaAndroid;
+     
+     public static ListaDispositivosAndroid miListaAndroid = new ListaDispositivosAndroid();
     //static private HashMap<String, Usuario> usuarioHashMap;
 
     public ListaDispositivosAndroid() {
@@ -25,6 +28,22 @@ public class ListaDispositivosAndroid {
             listaAndroid.add(movilA);
     }
 
+        public void deleteAndroid(String id) {
+        boolean borrado = false;
+        ListIterator<DispositivosAndroid> iterList = listaAndroid.listIterator();
+        DispositivosAndroid temp;
+        if (listaAndroid.isEmpty()) {
+            System.out.println("La lista está vacía");
+        } else {
+            while (iterList.hasNext() && borrado == false) {
+                temp = iterList.next();
+                if (id.equalsIgnoreCase(temp.getNombre())) {
+                    listaAndroid.remove(temp);
+                    borrado = true;
+                }
+            }
+        }
+    }
 
     public DispositivosAndroid findId(String id) {
         ListIterator<DispositivosAndroid> iterList = listaAndroid.listIterator();
@@ -76,8 +95,11 @@ public class ListaDispositivosAndroid {
         }
     }
 
-    public List<DispositivosAndroid> listaUsuario() {
+    public List<DispositivosAndroid> getListaAndroid() {
         return listaAndroid;
+    }
+        public int tam() {
+        return listaAndroid.size();
     }
 
 //    public void escribirDatos() throws FileNotFoundException, IOException {

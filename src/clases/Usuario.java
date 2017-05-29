@@ -7,7 +7,14 @@ import java.util.Objects;
  */
 public class Usuario implements Comparable<Object> {
     private String nombre, apellido1, apellido2, usuario, contraseña;
-
+/**
+ * Contructor de usuario
+ * @param nombre
+ * @param apellido1
+ * @param apellido2
+ * @param usuario
+ * @param contraseña 
+ */
     public Usuario(String nombre, String apellido1, String apellido2, String usuario, String contraseña) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -15,7 +22,6 @@ public class Usuario implements Comparable<Object> {
         this.usuario = usuario;
         this.contraseña = contraseña;
     }
-
 
     public String getNombre() {
         return nombre;
